@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv=“Pragma” content=”no-cache”>
+    <meta http-equiv=“Expires” content=”-1″>
+    <meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="starter_zip\css\bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" href="starter_zip\images\favicon.ico" type="image/x-icon">
+    <title>Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('starter_zip\images\background.svg') fixed center center / cover;
+            background-color: black;
+            color: white;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: transparent;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .navbar {
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-pack: justify;
+            padding: .5rem 1rem;
+            flex-direction: column;
+        }
+
+        .logo {
+            max-width: 100px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0 10px;
+        }
+
+        .nav-link i {
+            color: white;
+        }
+
+        .instagram:hover i {
+            color: #E1306C;
+        }
+
+        .facebook:hover i {
+            color: #3b5998;
+        }
+
+        .twitter:hover i {
+            color: #1DA1F2;
+        }
+
+        .github:hover i {
+            color: #171515;
+        }
+
+        .linkedin:hover i {
+            color: #0077b5;
+        }
+
+        .youtube:hover i {
+            color: #FF0000;
+        }
+
+        .pinterest:hover i {
+            color: #CB2027;
+        }
+
+        .whatsapp:hover i {
+            color: #25D366;
+        }
+
+        .skype:hover i {
+            color: #00AFF0;
+        }
+
+        .telegram:hover i {
+            color: #0088cc;
+        }
+
+        .email:hover i {
+            color: #D44638;
+        }
+
+        .phone:hover i {
+            color: #34B7F1;
+        }
+
+        .btn {
+            transition: all 0.5s;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 1000px) {
+            .navbar-nav {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .nav-item {
+                flex: 1;
+            }
+        }
+
+        main {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 30%;
+            height: 100vh;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
+        .content {
+            flex: 1;
+            overflow: hidden;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .sidebar-list li {
+            margin-bottom: 10px;
+        }
+
+        .project-card {
+            display: none;
+            max-width: 500px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: left;
+            position: relative;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .project-description {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            ;
+        }
+
+        /* Media Query for Mobile Devices */
+        @media only screen and (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                height: 30vh;
+            }
+
+            nav ul {
+                flex-direction: row;
+                /* Change to row to keep the list horizontal */
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            .navbar-nav {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .nav-item {
+                margin-bottom: 0;
+                /* Adjust margin for smaller screens */
+                margin-right: 10px;
+                /* Add margin between items */
+            }
+
+            .sidebar {
+                width: 30%;
+                height: auto;
+            }
+        }
+
+        /* Media Query for Tablets */
+        @media only screen and (min-width: 601px) and (max-width: 1024px) {
+            .sidebar {
+                width: 40%;
+            }
+        }
+
+        /* Media Query for Laptops/Desktops */
+        @media only screen and (min-width: 1025px) {
+
+            /* Add styles for larger screens as needed */
+            header {
+                height: 100px;
+                /* Adjust header height as needed */
+            }
+
+            .sidebar {
+                width: 30%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="d-flex justify-content-between align-items-center">
+        <div>
+            <a href="#home">
+                <img src="starter_zip\images\logo.svg" alt="Logo" class="logo">
+            </a>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link instagram" href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link twitter" href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link github" href="#"><i class="fab fa-github"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link linkedin" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link youtube" href="#"><i class="fab fa-youtube"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pinterest" href="#"><i class="fab fa-pinterest"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link skype" href="#"><i class="fab fa-skype"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link telegram" href="#"><i class="fab fa-telegram"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link whatsapp" href="#"><i class="fab fa-whatsapp"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link email" href="mailto:your.email@gmail.com"><i class="fas fa-envelope"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link phone" href="tel:+1234567890"><i class="fas fa-phone"></i></a>
+                </li>
+            </ul>
+            <a href="resume.pdf" id="hidden-resume" style="display: none;" download>Download</a>
+            <button id="resume-button" class="btn btn-outline-primary">Resume</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="sidebar">
+            <h2>Skills</h2>
+            <ul class="sidebar-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Bootstrap</li>
+                <li>GIT</li>
+                <li>Python</li>
+                <li>Java</li>
+                <li>C++</li>
+            </ul>
+
+            <h2>Projects</h2>
+            <ul class="sidebar-list" id="projectsList">
+                <li onclick="showProject('project1')">Simple website with HTML and CSS</li>
+                <li onclick="showProject('project2')">Interactive webpage with JavaScript</li>
+                <li onclick="showProject('project3')">React application</li>
+                <li onclick="showProject('project4')">Responsive design with Bootstrap</li>
+                <li onclick="showProject('project5')">Version control with GIT</li>
+                <li onclick="showProject('project6')">Python web scraper</li>
+                <li onclick="showProject('project7')">Java console application</li>
+                <li onclick="showProject('project8')">C++ simple program</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="project1" class="project-card">
+                <span class="close-btn" onclick="closeProject('project1')">&times;</span>
+                <h3>Project 1</h3>
+                <p class="project-description">Description of Project 1.</p>
+                <a href="#" class="view-btn" target="_blank">View on GitHub</a>
+            </div>
+
+            <div id="project2" class="project-card">
+                <span class="close-btn" onclick="closeProject('project2')">&times;</span>
+                <h3>Project 2</h3>
+                <p class="project-description">Description of Project 2.</p>
+                <a href="#" class="view-btn" target="_blank">View on GitHub</a>
+            </div>
+
+            <!-- Repeat similar structure for other projects -->
+
+        </div>
+    </main>
+    <script src="jquery.slim.min.js"></script>
+    <!-- <script src="popper.min.js"></script> -->
+    <script src="bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Hide all project cards on page load
+            var projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => card.style.display = 'none');
+        });
+
+        function showProject(projectId) {
+            // Hide all project cards
+            var projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => card.style.display = 'none');
+
+            // Show the selected project card
+            var selectedProject = document.getElementById(projectId);
+            selectedProject.style.display = 'block';
+        }
+
+        function closeProject(projectId) {
+            // Hide the selected project card
+            var selectedProject = document.getElementById(projectId);
+            selectedProject.style.display = 'none';
+        }
+
+        document.getElementById('resume-button').addEventListener('click', function () {
+            document.getElementById('hidden-resume').click();
+        });
+    </script>
+    <script>
+        const cacheName = 'portfolio-cache-v1';
+        const cacheFiles = [
+            '/',
+            'index.html',
+            'background.svg',
+            // Add other files and assets you want to cache
+        ];
+
+        self.addEventListener('install', (event) => {
+            event.waitUntil(
+                caches.open(cacheName).then((cache) => {
+                    return cache.addAll(cacheFiles);
+                })
+            );
+        });
+
+        self.addEventListener('fetch', (event) => {
+            event.respondWith(
+                caches.match(event.request).then((response) => {
+                    return response || fetch(event.request);
+                })
+            );
+        });
+
+    </script>
+</body>
+
+</html>

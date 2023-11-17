@@ -1,0 +1,138 @@
+/* header-styles.css */
+
+.header {
+    background-color: transparent;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    max-width: 200px;
+}
+
+.navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    padding: .5rem 1rem;
+    flex-direction: column;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+.nav-link i {
+    color: white;
+}
+
+.instagram:hover i {
+    color: #E1306C;
+}
+
+.facebook:hover i {
+    color: #3b5998;
+}
+
+.twitter:hover i {
+    color: #1DA1F2;
+}
+
+.github:hover i {
+    color: #171515;
+}
+
+.linkedin:hover i {
+    color: #0077b5;
+}
+
+.youtube:hover i {
+    color: #FF0000;
+}
+
+.pinterest:hover i {
+    color: #CB2027;
+}
+
+.whatsapp:hover i {
+    color: #25D366;
+}
+
+.skype:hover i {
+    color: #00AFF0;
+}
+
+.telegram:hover i {
+    color: #0088cc;
+}
+
+.email:hover i {
+    color: #D44638;
+}
+
+.phone:hover i {
+    color: #34B7F1;
+}
+
+.btn {
+    transition: all 0.5s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        height: 30vh;
+    }
+
+    nav ul {
+        flex-direction: row;
+        /* Change to row to keep the list horizontal */
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-item {
+        margin-bottom: 0;
+        /* Adjust margin for smaller screens */
+        margin-right: 10px;
+        /* Add margin between items */
+    }
+}
+
+/* Media Query for Tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Add styles for tablets if needed */
+}
+
+/* Media Query for Laptops/Desktops */
+@media only screen and (min-width: 1025px) {
+    /* Add styles for larger screens as needed */
+}

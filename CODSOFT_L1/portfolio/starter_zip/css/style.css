@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('background-image.jpg') fixed center center / cover;
+    color: white;
+    font-size: clamp(16px 2vw 22px);
+}
+
+header {
+    background-color: #343a40;
+    padding: clamp(10px, 2vh, 20px);
+}
+
+.details {
+    font-size: clamp(16px, 2vw, 20px);
+}
+
+header .nav-link i {
+    color: white;
+    transition: color 0.1s ease;
+}
+
+header .instagram:hover i {
+    color: #E1306C;
+}
+
+header .facebook:hover i {
+    color: #3b5998;
+}
+
+header .twitter:hover i {
+    color: #1DA1F2;
+}
+
+header .github:hover i {
+    color: #171515;
+}
+
+header .linkedin:hover i {
+    color: #0077b5;
+}
+
+header .youtube:hover i {
+    color: #FF0000;
+}
+
+header .pinterest:hover i {
+    color: #CB2027;
+}
+
+header .whatsapp:hover i {
+    color: #25D366;
+}
+
+header .skype:hover i {
+    color: #00AFF0;
+}
+
+header .telegram:hover i {
+    color: #0088cc;
+}
+
+.btn {
+    transition: all 0.5s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+#left {
+    background: url('my-image.png') no-repeat center center fixed;
+    background-size: 100% 100%;
+}
+
+.bio-container {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bio-container img {
+    display: none;
+}
+
+.bio-container details {
+    cursor: pointer;
+}
+
+#left::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#left:hover {
+    transform: skew(1)
+}
+
+#left img {
+    max-width: 100%;
+    height: auto;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+#right,
+#left {
+    flex: 1;
+    overflow: auto;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+}
+
+.skills ul li::before {
+    content: '\2022';
+    color: #007bff;
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+}
+
+.carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.card {
+    margin: 20px;
+}

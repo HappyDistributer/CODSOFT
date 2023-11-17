@@ -1,0 +1,93 @@
+/* Master CSS (styles.css) */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('../images/background.svg') fixed center center / cover;
+    background-color: #000000;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+header {
+    background-color: transparent;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    padding: .5rem 1rem;
+    flex-direction: column;
+}
+
+.logo {
+    max-width: 100px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+.nav-link i {
+    color: white;
+}
+
+/* ... other master styles ... */
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: 30vh;
+    }
+
+    nav ul {
+        flex-direction: row;
+        /* Change to row to keep the list horizontal */
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav-item {
+        margin-bottom: 0;
+        /* Adjust margin for smaller screens */
+        margin-right: 10px;
+        /* Add margin between items */
+    }
+}
+
+/* Media Query for Tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Add styles for tablets if needed */
+}
+
+/* Media Query for Laptops/Desktops */
+@media only screen and (min-width: 1025px) {
+    /* Add styles for larger screens as needed */
+}
+
+/* ... other media queries ... */
